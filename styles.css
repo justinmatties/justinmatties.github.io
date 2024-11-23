@@ -6,16 +6,18 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
-    height: 100vh;
+    flex-direction: column;
 }
 
 header {
     background-color: #800000; /* UMass Maroon */
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 10;
 }
 
 header h1 {
@@ -30,36 +32,34 @@ header h2 {
 }
 
 nav {
-    background-color: #333; /* Dark Gray */
-    padding: 10px;
+    background-color: #800000; /* UMass Maroon */
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
-    height: 100%;
+    right: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    padding: 10px 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0 15px;
+    padding: 10px 20px;
     text-transform: uppercase;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #800000; /* UMass Maroon */
+    background-color: #d32f2f; /* Lighter Red */
 }
 
 main {
-    margin-left: 220px; /* Offset for sidebar */
-    padding: 20px;
+    padding: 80px 20px 20px; /* Added padding to prevent overlap with top bar */
     flex-grow: 1;
     background-color: #f9f9f9;
     overflow-y: auto;
@@ -74,9 +74,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
     font-size: 0.9rem;
 }
 
@@ -86,17 +83,16 @@ footer p {
 
 /* Make it mobile-friendly */
 @media screen and (max-width: 768px) {
-    nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    main {
-        margin-left: 0;
-    }
-
     header h1, header h2 {
         font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        padding: 8px 15px;
     }
 }
