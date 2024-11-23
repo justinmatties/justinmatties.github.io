@@ -65,6 +65,7 @@ body {
     border-radius: 5px;
 }
 
+/* Main Content */
 .main-content {
     margin-left: 250px;
     padding: 40px;
@@ -89,7 +90,7 @@ header p {
 
 /* Section */
 section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -104,6 +105,12 @@ section p {
     line-height: 1.6;
 }
 
+section ul {
+    font-size: 1.2em;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -111,7 +118,5 @@ footer {
     margin-top: 40px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    position: relative;
 }
