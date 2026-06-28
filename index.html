@@ -1,57 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Matties</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Matties | Biomechanics Research</title>
+  <meta
+    name="description"
+    content="Professional website for Justin Matties, a biomechanics researcher and PhD student at UMass Amherst."
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Justin Matties</h1>
-        <h2>Biomechanics Researcher | PhD Student | Data Scientist</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="index.html">Justin Matties</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a class="active" href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <a href="portfolio.html">Research Portfolio</a>
+      </nav>
     </header>
 
     <main>
-        <section id="about-me">
-            <h3>About Me</h3>
-            <p>I am a PhD student at the University of Massachusetts, Amherst, specializing in biomechanics with a focus on how footwear technology and biomechanical interventions influence athletic performance, injury risk, and rehabilitation outcomes. My research combines principles of biomechanics, data science, and sports performance to explore sex-specific differences in movement mechanics and to develop more personalized strategies for enhancing athletic performance and minimizing injury-related pain.</p>
-            <p>I hold a Master’s degree in Biomechanics, where I investigated the biomechanical and physiological impacts of advanced footwear technologies (commonly referred to as “super shoes”) on distance runners. My work has been presented at major biomechanics conferences, and I continue to develop expertise in both experimental biomechanics techniques and advanced statistical analyses to better understand how interventions like footwear can influence running mechanics.</p>
-            <p>In addition to my research, I have extensive experience in mentoring and collaborating with student researchers, and I actively contribute to the biomechanics community. I am passionate about applying my work in both academic and applied settings to improve clinical outcomes and enhance sports performance.</p>
-        </section>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">University of Massachusetts Amherst</p>
+          <h1>Biomechanics research focused on footwear, human movement, and applied performance science.</h1>
+          <p class="hero-text">
+            I am Justin Matties, MS, a PhD student in Kinesiology at UMass Amherst working at the
+            intersection of biomechanics, movement science, and data-driven research. My work centers on
+            how individuals respond to footwear and training interventions, with an emphasis on clean study
+            design, practical interpretation, and translational impact.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="cv.html">View CV</a>
+            <a class="button button-secondary" href="portfolio.html">Explore Projects</a>
+          </div>
+          <ul class="contact-links" aria-label="Contact links">
+            <li><a href="#">LinkedIn placeholder</a></li>
+            <li><a href="#">Email placeholder</a></li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <figure class="portrait-card">
+            <img src="Images/JM_Portrait.jpg" alt="Portrait of Justin Matties">
+          </figure>
+        </div>
+      </section>
 
-        <section id="page-links">
-            <div class="page-link">
-                <a href="research.html">
-                    <img src="path/to/research/image.jpg" alt="Research">
-                    <h4>Research</h4>
-                </a>
-            </div>
-            <div class="page-link">
-                <a href="cv.html">
-                    <img src="path/to/cv/image.jpg" alt="CV">
-                    <h4>CV</h4>
-                </a>
-            </div>
-            <div class="page-link">
-                <a href="contact.html">
-                    <img src="path/to/contact/image.jpg" alt="Contact">
-                    <h4>Contact</h4>
-                </a>
-            </div>
-        </section>
+      <section class="section-grid">
+        <article class="panel panel-accent">
+          <p class="eyebrow">Current Work</p>
+          <h2>Researching movement adaptation in advanced footwear technology.</h2>
+          <p>
+            My current training includes doctoral work in kinesiology at UMass Amherst, a graduate
+            certificate in statistical and computational data science, and research within the
+            Musculoskeletal and Orthopedic Biomechanics Laboratory.
+          </p>
+        </article>
+        <article class="panel stat-stack">
+          <div>
+            <p class="stat-label">Current role</p>
+            <p class="stat-value">PhD Student, Kinesiology</p>
+          </div>
+          <div>
+            <p class="stat-label">Institution</p>
+            <p class="stat-value">UMass Amherst</p>
+          </div>
+          <div>
+            <p class="stat-label">Prior degree</p>
+            <p class="stat-value">MS, Kinesiology</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Focus Areas</p>
+          <h2>Research themes</h2>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Footwear Biomechanics</h3>
+            <p>
+              Examining how runners respond mechanically and energetically to footwear design,
+              cushioning, and long-term adaptation.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Human Movement</h3>
+            <p>
+              Studying gait, performance, and variability to better understand individualized movement
+              responses in sport and clinical contexts.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Applied Data Science</h3>
+            <p>
+              Using reproducible analysis, computational tools, and careful interpretation to connect
+              biomechanics data with meaningful research questions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="feature-panel">
+        <div class="feature-copy">
+          <p class="eyebrow">Background</p>
+          <h2>Built around research, teaching, and translational communication.</h2>
+          <p>
+            Alongside ongoing doctoral work, I have served in research and teaching roles, contributed to
+            biomechanics-focused lab environments, and developed a professional path grounded in both
+            rigorous analysis and clear communication.
+          </p>
+          <a class="text-link" href="publications.html">See publications and writing</a>
+        </div>
+        <div class="feature-image">
+          <img src="Images/Lab_Portrait.jpeg" alt="Justin Matties standing in a biomechanics laboratory">
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Quick Navigation</p>
+          <h2>What you can find here</h2>
+        </div>
+        <div class="card-grid">
+          <article class="nav-card">
+            <h3>Curriculum Vitae</h3>
+            <p>Open a dedicated CV page with a summary and direct access to the full PDF.</p>
+            <a class="text-link" href="cv.html">Go to CV</a>
+          </article>
+          <article class="nav-card">
+            <h3>Publications</h3>
+            <p>Browse a clean, editable page for papers, presentations, and future scholarly work.</p>
+            <a class="text-link" href="publications.html">Go to Publications</a>
+          </article>
+          <article class="nav-card">
+            <h3>Research Portfolio</h3>
+            <p>See project snapshots and featured research themes that can expand over time.</p>
+            <a class="text-link" href="portfolio.html">Go to Portfolio</a>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Justin Matties</p>
+    <footer class="site-footer">
+      <p>© <span id="current-year"></span> Justin Matties</p>
+      <p class="footer-note">Built as a lightweight static website for easy local editing and GitHub deployment.</p>
     </footer>
+  </div>
 </body>
 </html>

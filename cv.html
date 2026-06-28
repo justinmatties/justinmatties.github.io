@@ -1,190 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Matties - CV</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV | Justin Matties</title>
+  <meta name="description" content="Curriculum vitae for Justin Matties.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Justin Matties</h1>
-        <h2>Biomechanics Researcher | PhD Student | Data Scientist</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="index.html">Justin Matties</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <a href="portfolio.html">Research Portfolio</a>
+      </nav>
     </header>
 
-    <main>
-        <section id="cv">
-            <h3>Justin Matties, M.S.</h3>
-            <p>jmatties@umass.edu</p>
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Curriculum Vitae</p>
+        <h1>Academic background, training, and professional experience.</h1>
+        <p>
+          This page gives a quick overview of current appointments and training. The full CV is available
+          as a PDF below.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="Matties_CV.pdf" target="_blank" rel="noopener noreferrer">
+            Open PDF
+          </a>
+          <a class="button button-secondary" href="Matties_CV.pdf" download>
+            Download CV
+          </a>
+        </div>
+      </section>
 
-            <h4>EDUCATION:</h4>
-            <ul>
-                <li>
-                    <h5>PhD, Kinesiology</h5>
-                    <p>Sep 2024 - Present</p>
-                    <p>University of Massachusetts Amherst, Amherst, MA</p>
-                    <p>PI: Katherine Boyer, PhD</p>
-                    <p>Coursework: Conducting Research in Kinesiology, Skeletal Muscle Biology, Writing Scientific Manuscripts in Kinesiology, Movement Neuromechanics Journal Club</p>
-                </li>
-                <li>
-                    <h5>Certificate, Statistical and Computational Data Science</h5>
-                    <p>Sep 2024 - Present</p>
-                    <p>University of Massachusetts Amherst, Amherst, MA</p>
-                    <p>Current Coursework: Introduction to Numerical Computing with Python</p>
-                </li>
-                <li>
-                    <h5>MS, Kinesiology</h5>
-                    <p>Aug 2022 - May 2024</p>
-                    <p>4.0 GPA</p>
-                    <p>California State University East Bay, Hayward, CA</p>
-                    <p>PI: K. Michael Rowley, PhD</p>
-                    <ul>
-                        <li>Conducted a University Master's Thesis investigating the long-term effects of using "super shoes" versus traditional racing flats on distance running performance, biomechanics, and physiological adaptations to training</li>
-                    </ul>
-                    <p>Coursework: Biomechanics, Knowledge Construction in Kinesiology, Assessment of Human Performance, Critical Perspectives on the Body, Mythbusters</p>
-                    <p>NCAA student athlete & team captain in Cross Country and Track</p>
-                </li>
-                <li>
-                    <h5>Certificate, Footwear Design and Development</h5>
-                    <p>April 2023-July 2023</p>
-                    <p>Lasell University, Newton, MA</p>
-                    <p>4.0 GPA</p>
-                    <p>Coursework: Footwear Product Development (instructed by Elizabeth Brock-Jones), Shoe Design Basics, Footwear Materials, Color and Trend Analysis</p>
-                </li>
-                <li>
-                    <h5>BS, Kinesiology, Minor in Business Administration</h5>
-                    <p>Aug 2019 - May 2022</p>
-                    <p>4.0 GPA</p>
-                    <p>California State University East Bay, Hayward, CA</p>
-                    <p>Coursework: Exercise Physiology, Strength and Conditioning, Motor
-                Learning and Control, Measurement and Evaluation in Kinesiology,
-                Biomechanics of Human Movement, Care and Prevention of Athletic
-                Injuries, Sport and Exercise Psychology</p>
-                    <p>NCAA student athlete in Cross Country and Track</p>
-                </li>
-            </ul>
+      <section class="timeline-grid">
+        <article class="panel">
+          <p class="eyebrow">Education</p>
+          <div class="timeline-item">
+            <h2>PhD, Kinesiology</h2>
+            <p>University of Massachusetts Amherst</p>
+            <span>2024 to present</span>
+          </div>
+          <div class="timeline-item">
+            <h2>Graduate Certificate, Statistical and Computational Data Science</h2>
+            <p>University of Massachusetts Amherst</p>
+            <span>2024 to present</span>
+          </div>
+          <div class="timeline-item">
+            <h2>MS, Kinesiology</h2>
+            <p>California State University East Bay</p>
+            <span>2022 to 2024</span>
+          </div>
+          <div class="timeline-item">
+            <h2>BS, Kinesiology, Minor in Business Administration</h2>
+            <p>California State University East Bay</p>
+          </div>
+        </article>
 
-            <h4>RESEARCH EXPERIENCE:</h4>
-            <ul>
-                <li>
-                    <h5>Graduate Research Assistant</h5>
-                    <p>Aug 2022 - May 2024</p>
-                    <p>California State University East Bay, Hayward, CA</p>
-                    <ul>
-                        <li>Conducted biomechanics research focusing on the influence of
-                    footwear on running performance, injury risk, and human
-                    performance optimization</li>
-                        <li>Managed data collection, analysis, and interpretation using
-                    statistical software (R and SPSS)</li>
-                        <li>Presented research findings at national conferences, including
-                    the American College of Sports Medicine (ACSM) and the
-                    International Society of Biomechanics (ISB)</li>
-                        <li>Mentored undergraduate students in research methodologies and
-                    data analysis techniques</li>
-                        <li>Collaborated with researchers from other universities on joint
-                    projects and publications</li>
-                    </ul>
-                </li>
-                <li>
-                    <h5>Undergraduate Research Assistant</h5>
-                    <p>Jan 2022 - May 2022</p>
-                    <p>California State University East Bay, Hayward, CA</p>
-                    <ul>
-                        <li>Assisted in conducting biomechanics research on lower extremity
-                    kinematics during running and jumping tasks</li>
-                        <li>Performed data collection and analysis using motion capture
-                    systems and force platforms</li>
-                    </ul>
-                </li>
-            </ul>
+        <article class="panel">
+          <p class="eyebrow">Experience</p>
+          <div class="timeline-item">
+            <h2>Research Assistant</h2>
+            <p>Musculoskeletal and Orthopedic Biomechanics Laboratory</p>
+            <span>Aug 2024 to present</span>
+          </div>
+          <div class="timeline-item">
+            <h2>Teaching Assistant</h2>
+            <p>Kinesiology Department, University of Massachusetts Amherst</p>
+            <span>Aug 2024 to present</span>
+          </div>
+          <div class="timeline-item">
+            <h2>Graduate Student Assistant</h2>
+            <p>B.E.T. McNair Scholars Program, California State University East Bay</p>
+            <span>May 2023 to Aug 2024</span>
+          </div>
+        </article>
+      </section>
 
-            <h4>TEACHING EXPERIENCE:</h4>
-            <ul>
-                <li>
-                    <h5>Teaching Associate</h5>
-                    <p>Aug 2023 - May 2024</p>
-                    <p>California State University East Bay, Hayward, CA</p>
-                    <ul>
-                        <li>Led lab sections for Biomechanics (KIN 3311) and Measurement
-                    and Evaluation in Kinesiology (KIN 3340) courses</li>
-                        <li>Instructed students in biomechanics lab techniques, data
-                    collection, and analysis methods</li>
-                        <li>Developed and graded lab assignments and exams</li>
-                        <li>Provided support and guidance to students during lab sessions</li>
-                    </ul>
-                </li>
-            </ul>
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Funding</p>
+          <h2>Grant proposals and awarded support</h2>
+        </div>
+        <div class="funding-highlight-grid">
+          <article class="feature-award">
+            <p class="publication-type">Highlighted Award</p>
+            <h3>The 2023 Nike Award for Athletic Footwear Research: Celebrating inclusivity in footwear science</h3>
+            <p class="award-meta">Nike, Inc.</p>
+            <p class="award-amount">$5,000 in footwear</p>
+          </article>
+          <article class="feature-award">
+            <p class="publication-type">Highlighted Award</p>
+            <h3>ISB Technical Group Travel Grant</h3>
+            <p class="award-meta">International Society of Biomechanics Council</p>
+            <p class="award-amount">$500 in conference travel support</p>
+          </article>
+          <article class="feature-award">
+            <p class="publication-type">Highlighted Award</p>
+            <h3>SEED Research Grant</h3>
+            <p class="award-meta">Cal State East Bay College of Education and Allied Studies</p>
+            <p class="award-amount">$4,000 in footwear</p>
+          </article>
+          <article class="feature-award">
+            <p class="publication-type">Highlighted Award</p>
+            <h3>UMass Graduate School Predissertation Grant</h3>
+            <p class="award-meta">UMass Graduate School</p>
+            <p class="award-amount">$1,496 in research supplies</p>
+          </article>
+        </div>
 
-            <h4>PRESENTATIONS:</h4>
-            <ul>
-                <li>
-                    <h5>Effects of Super Shoes on Pacing Strategy During a 10 km Time Trial</h5>
-                    <p>American College of Sports Medicine (ACSM) Annual Meeting,
-                Denver, CO. June 2023. (Platform Presentation)</p>
-                </li>
-                <li>
-                    <h5>Biomechanical Adaptations to Long-Term Super Shoe Use in Distance
-                Runners</h5>
-                    <p>International Society of Biomechanics (ISB) Congress, Fukuoka,
-                Japan. July 2023. (Poster Presentation)</p>
-                </li>
-            </ul>
+        <div class="funding-list">
+          <article class="funding-item">
+            <div class="funding-year">2026</div>
+            <div class="funding-body">
+              <h3>UMass Graduate School Predissertation Grant</h3>
+              <p class="award-meta">UMass Graduate School</p>
+              <p class="award-amount">$1,496 in research supplies</p>
+              <p class="funding-project">Project: Quantifying Perception of the Foot-Shoe Interface During Walking</p>
+            </div>
+          </article>
 
-            <h4>AWARDS & HONORS:</h4>
-            <ul>
-                <li>
-                    <p>University Valedictorian, California State University East Bay, 2022</p>
-                </li>
-                <li>
-                    <p>Department of Kinesiology Outstanding Student Award, 2022</p>
-                </li>
-                <li>
-                    <p>Dean's List, California State University East Bay, 2019-2022</p>
-                </li>
-                <li>
-                    <p>President's Honor Roll, Diablo Valley College, 2017-2019</p>
-                </li>
-            </ul>
+          <article class="funding-item">
+            <div class="funding-year">2025</div>
+            <div class="funding-body">
+              <h3>ISB Technical Group Travel Grant</h3>
+              <p class="award-meta">International Society of Biomechanics Council</p>
+              <p class="award-amount">$500 in conference travel support</p>
+              <p class="funding-project">Project: Sex-specific metabolic and biomechanical responses to advanced footwear technology</p>
+            </div>
+          </article>
 
-            <h4>SKILLS:</h4>
-            <ul>
-                <li>
-                    <h5>Biomechanics:</h5>
-                    <p>3D Motion Capture, Force Platform Analysis, Running Gait Analysis,
-                Electromyography (EMG), Footwear Biomechanics, Injury
-                Prevention</p>
-                </li>
-                <li>
-                    <h5>Data Science:</h5>
-                    <p>R, SPSS, Python, Statistical Modeling, Data Visualization, Machine
-                Learning</p>
-                </li>
-                <li>
-                    <h5>Other:</h5>
-                    <p>Microsoft Office Suite, Google Workspace, Adobe Creative Suite,
-                Excellent Communication Skills, Teamwork, Leadership,
-                Mentoring</p>
-                </li>
-            </ul>
+          <article class="funding-item">
+            <div class="funding-year">2025</div>
+            <div class="funding-body">
+              <h3>UMass Kinesiology Graduate Student Travel Grant</h3>
+              <p class="award-meta">UMass Amherst Department of Kinesiology</p>
+              <p class="award-amount">$700 in conference travel support</p>
+              <p class="funding-project">Project: Lower Extremity Joint Work Redistribution After A 30-Minute Treadmill Walk Is Not Explained By Baseline Walking Mechanics, Knee Extensor Strength, Or Physical Activity In Older Adults</p>
+            </div>
+          </article>
 
-            <h4>MEDIA COVERAGE:</h4>
-            <ul>
-                <li>
-                    <p>Kimberly H. (2023, June, 6). Pioneer Grads Celebrate Commencement at CSU
-                East Bay News Center.
+          <article class="funding-item">
+            <div class="funding-year">2025</div>
+            <div class="funding-body">
+              <h3>Graduate Student Government Travel Grant</h3>
+              <p class="award-meta">UMass Amherst Graduate Student Government</p>
+              <p class="award-amount">$138 in conference travel support</p>
+              <p class="funding-project">Project: Does a 30 Minute Treadmill Walk Result in a Distal to Proximal Shift in Older Adults?</p>
+            </div>
+          </article>
 
-                https://www.csueastbay.edu/news-center/2023/06/stepping-into-the-future.html
-                </p>
-                </li>
-                <li>
-                    <p>Burfoot, A. (2023, July, 22). The Real Power of Super Shoes Could Be
-                Supercharged Training. The New York Times.
-                https://www.nytimes.com/2023/07/22/sports/super-shoes-
+          <article class="funding-item">
+            <div class="funding-year">2023</div>
+            <div class="funding-body">
+              <h3>Scholar</h3>
+              <p class="award-meta">Cal State East Bay Center for Student Research</p>
+              <p class="award-amount">$2,000 in supplies and $2,500 in tuition support</p>
+              <p class="funding-project">Project: Effects of an 8-week training intervention in carbon plated running shoes: How physiological adaptations affect race day performance benefits</p>
+            </div>
+          </article>
+
+          <article class="funding-item">
+            <div class="funding-year">2023</div>
+            <div class="funding-body">
+              <h3>SEED Research Grant</h3>
+              <p class="award-meta">Cal State East Bay College of Education and Allied Studies</p>
+              <p class="award-amount">$4,000 in footwear</p>
+              <p class="funding-project">Project: Effects of an 8-week training intervention in carbon plated running shoes: How physiological adaptations affect race day performance benefits</p>
+            </div>
+          </article>
+
+          <article class="funding-item">
+            <div class="funding-year">2023</div>
+            <div class="funding-body">
+              <h3>The 2023 Nike Award for Athletic Footwear Research: Celebrating inclusivity in footwear science</h3>
+              <p class="award-meta">Nike, Inc.</p>
+              <p class="award-amount">$5,000 in footwear</p>
+              <p class="funding-project">Project: Effects of an 8-week training intervention in carbon plated running shoes: How physiological adaptations affect race day performance benefits</p>
+            </div>
+          </article>
+
+          <article class="funding-item">
+            <div class="funding-year">2022</div>
+            <div class="funding-body">
+              <h3>Level 3 Scholar</h3>
+              <p class="award-meta">Cal State East Bay Center for Student Research</p>
+              <p class="award-amount">$2,000 in footwear and $5,345 in tuition support</p>
+              <p class="funding-project">Project: Effects of an 8-week training intervention in carbon plated running shoes: How physiological adaptations affect race day performance benefits</p>
+            </div>
+          </article>
+
+          <article class="funding-item">
+            <div class="funding-year">2022</div>
+            <div class="funding-body">
+              <h3>Summer 2022 Research Grant (partial award)</h3>
+              <p class="award-meta">Labfront</p>
+              <p class="award-amount">Labfront advanced account ($995)</p>
+              <p class="funding-project">Project: Effects of an 8-week training intervention in carbon plated running shoes: How physiological adaptations affect race day performance benefits</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Presentations</p>
+          <h2>Conference and research presentation summary</h2>
+        </div>
+        <div class="presentation-summary-grid">
+          <article class="info-card">
+            <h3>International Meetings</h3>
+            <p>
+              Presentations at the World Congress of Biomechanics, the International Society of Biomechanics
+              Congress, and the Footwear Biomechanics Symposium span Vancouver, Stockholm, Fukuoka, Osaka,
+              and Oslo.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>National Conferences</h3>
+            <p>
+              Research has also been presented at the American College of Sports Medicine and the Joint
+              Statistical Meetings, connecting biomechanics work with broader sport science and quantitative
+              research communities.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>University Showcases</h3>
+            <p>
+              Additional presentations include UMass and Cal State East Bay research symposia, thesis
+              defense work, student research showcases, and CSU-wide research competitions.
+            </p>
+          </article>
+        </div>
+
+        <div class="presentation-list">
+          <article class="presentation-item">
+            <h3>2026</h3>
+            <p>
+              Poster presentation at the 10th World Congress of Biomechanics in Vancouver on lower
+              extremity joint work redistribution after a 30-minute treadmill walk in older adults.
+            </p>
+            <p>
+              Coauthor on podium and poster presentations at the UMOVE University of Massachusetts Student
+              Organized Research Symposium in Lowell.
+            </p>
+          </article>
+
+          <article class="presentation-item">
+            <h3>2025</h3>
+            <p>
+              Podium presentation at the International Society of Biomechanics Congress in Stockholm on
+              distal-to-proximal shifts after treadmill walking in older adults.
+            </p>
+            <p>
+              Podium presentation at the Footwear Biomechanics Symposium in Oslo on sex-specific metabolic
+              and biomechanical responses to advanced footwear technology.
+            </p>
+          </article>
+
+          <article class="presentation-item">
+            <h3>2024</h3>
+            <p>
+              Presented master's thesis research on advanced footwear technology at ACSM in Boston, the Cal
+              State East Bay Student Research Showcase, the CSU Wide Research Competition, and a master's
+              thesis defense at Cal State East Bay.
+            </p>
+          </article>
+
+          <article class="presentation-item">
+            <h3>2023</h3>
+            <p>
+              Presented pilot-study findings on carbon-plated running shoes at Joint Statistical Meetings in
+              Toronto, the International Society of Biomechanics Congress in Fukuoka, the Footwear
+              Biomechanics Symposium in Osaka, ACSM in Denver, the CSU Wide Research Competition in San
+              Diego, the Cal State East Bay Student Research Showcase, and the Grad Grand Slam Research
+              Competition.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Snapshot</p>
+          <h2>Research and training profile</h2>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Movement Science</h3>
+            <p>
+              Background in biomechanics, human motion analysis, and translational research in performance
+              and injury-related contexts.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Computation</h3>
+            <p>
+              Current graduate training includes statistical and computational data science to support
+              rigorous and reproducible analysis.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Teaching and Mentorship</h3>
+            <p>
+              Academic experience spans research assistance, teaching support, and student-facing
+              professional development settings.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pdf-panel">
+        <div>
+          <p class="eyebrow">Full Document</p>
+          <h2>Embedded CV</h2>
+          <p>If the PDF preview does not load in a browser, use the buttons above to open or download it directly.</p>
+        </div>
+        <div class="pdf-frame">
+          <object data="Matties_CV.pdf" type="application/pdf" width="100%" height="800">
+            <p>
+              Your browser could not display the PDF. Please
+              <a href="Matties_CV.pdf" target="_blank" rel="noopener noreferrer">open the CV in a new tab</a>.
+            </p>
+          </object>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="current-year"></span> Justin Matties</p>
+      <p class="footer-note">Update this page by editing the education and experience entries directly in the HTML.</p>
+    </footer>
+  </div>
+</body>
+</html>
