@@ -507,12 +507,19 @@ h1,
 }
 
 .feature-award {
-  position: relative;
-  min-height: 310px;
-  padding: 1.5rem 1.5rem 8rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 34%);
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 270px;
+  padding: 1.5rem;
   background:
     linear-gradient(135deg, rgba(136, 28, 28, 0.95) 0%, rgba(95, 17, 21, 0.92) 100%);
   color: var(--white);
+}
+
+.award-copy {
+  min-width: 0;
 }
 
 .feature-award .publication-type,
@@ -523,53 +530,66 @@ h1,
 }
 
 .award-logos {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.55rem;
-  width: min(66%, 250px);
-  min-height: 72px;
-  padding: 0.65rem;
-  border-radius: 8px;
-  background: var(--white);
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .award-logos img {
   width: 100%;
   max-width: 180px;
-  height: 60px;
+  height: 78px;
   object-fit: contain;
 }
 
+.award-logos-nike img {
+  max-width: 230px;
+  height: 125px;
+  filter: brightness(0) invert(1);
+}
+
 .award-logos-double {
-  width: min(82%, 330px);
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .award-logos-double img:first-child {
-  max-width: 205px;
+  width: 118px;
+  max-width: 100%;
+  height: auto;
 }
 
 .award-logos-double img:last-child {
-  max-width: 62px;
+  max-width: 230px;
+  height: 82px;
 }
 
-.award-logos-wide {
-  width: min(76%, 285px);
+.award-logos-stryd img {
+  max-width: 180px;
+  height: 78px;
 }
 
 .award-logos-wide img {
-  max-width: 240px;
+  max-width: 180px;
+  height: 78px;
 }
 
 .award-logos-compact {
-  width: 96px;
+  justify-self: end;
+  width: min(100%, 150px);
+  min-height: 132px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: var(--white);
 }
 
 .award-logos-compact img {
-  max-width: 68px;
+  max-width: 112px;
+  height: 108px;
 }
 
 .award-meta,
@@ -635,6 +655,10 @@ h1,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.project-grid-single {
+  grid-template-columns: 1fr;
 }
 
 .project-card {
@@ -747,13 +771,14 @@ h1,
   }
 
   .feature-award {
-    min-height: 300px;
-    padding: 1.2rem 1.2rem 7.5rem;
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 1.2rem;
   }
 
   .award-logos {
-    right: 1.2rem;
-    bottom: 1.2rem;
+    justify-self: end;
+    width: min(60%, 230px);
   }
 
   .funding-item {
