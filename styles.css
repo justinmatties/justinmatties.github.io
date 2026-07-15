@@ -405,6 +405,44 @@ h1,
   padding-bottom: 1rem;
 }
 
+.route66-page {
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.route66-content {
+  margin-bottom: 2rem;
+}
+
+.route66-content h2 {
+  margin-bottom: 0.4rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.55rem;
+}
+
+.route66-content h2:not(:first-child) {
+  margin-top: 1.8rem;
+}
+
+.route66-content p {
+  color: var(--slate);
+  font-size: 1.02rem;
+}
+
+.route66-contact {
+  display: grid;
+  justify-items: start;
+  gap: 0.2rem;
+}
+
+.route66-contact-name {
+  margin: 0;
+  color: var(--ink) !important;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.4rem !important;
+  font-weight: 700;
+}
+
 .page-hero {
   max-width: 760px;
   margin-bottom: 2rem;
