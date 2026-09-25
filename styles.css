@@ -42,6 +42,23 @@ a {
   color: inherit;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: url("Images/shoe-cursor.png") 62 14, default;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [role="button"] {
+    cursor: url("Images/shoe-cursor.png") 62 14, pointer;
+  }
+}
+
 .site-shell {
   width: min(calc(100% - 2rem), var(--max-width));
   margin: 0 auto;
