@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive, data-free demonstration of the Route66 Research iPhone app.">
+  <title>Route66 Research App Interactive Demo</title>
+  <script>
+    if (new URLSearchParams(window.location.search).has("embedded")) {
+      document.documentElement.classList.add("embedded");
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="phone" aria-label="Route66 Research app preview">
+      <header class="status-bar">
+        <span>9:41</span>
+        <span>Route66 Research</span>
+        <span>100%</span>
+      </header>
+      <aside class="demo-notice">Interactive demo &middot; No data is saved or transmitted</aside>
+
+      <section class="screen active" data-screen="today">
+        <div class="screen-header">
+          <p class="eyebrow">Route 66</p>
+          <h1>Day 1</h1>
+          <p>Aug 4, 2026</p>
+        </div>
+
+        <article class="shoe-panel">
+          <div class="shoe-number" id="today-shoe-number">1</div>
+          <div>
+            <h2 id="today-shoe-instruction">Wear Shoe 1</h2>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="row">
+            <div>
+              <h2>Activity Session</h2>
+              <p id="activity-label">Idle</p>
+            </div>
+            <span class="pill muted" id="session-pill">Stopped</span>
+          </div>
+          <div class="progress"><span id="prompt-progress"></span></div>
+          <p class="helper">Next RPE prompt after 20 active movement minutes, including stroller-like motion.</p>
+          <div class="button-row">
+            <button class="primary" id="session-toggle">Start Session</button>
+            <button id="prompt-now">Prompt Now</button>
+          </div>
+        </article>
+
+        <div class="tile-grid">
+          <article class="tile"><span>RPE</span><strong id="rpe-count">0</strong></article>
+          <article class="tile"><span>Daily Log</span><strong id="log-count">0</strong></article>
+          <article class="tile"><span>Sleep</span><strong id="sleep-count">0</strong></article>
+          <article class="tile"><span>CMJ Trials</span><strong id="cmj-count">0</strong></article>
+        </div>
+
+        <article class="card sync-card">
+          <div>
+            <h2>Sync</h2>
+            <p><span id="today-queue-count">0</span> queued in this demo</p>
+          </div>
+          <span class="pill muted">Demo</span>
+        </article>
+
+        <button class="full rest-day-action" id="rest-day-button">Label today as a rest day</button>
+        <p class="saved" id="rest-day-saved"></p>
+
+        <dialog class="confirmation-dialog" id="rest-day-dialog">
+          <h2>Confirm Rest Day</h2>
+          <p>Please confirm you that today is a rest day and should not count towards shoe wear. The randomization protocol will be updated automatically. This action cannot be undone</p>
+          <div class="dialog-actions">
+            <button id="cancel-rest-day">Cancel</button>
+            <button class="danger" id="confirm-rest-day">Confirm</button>
+          </div>
+        </dialog>
+      </section>
+
+      <section class="screen" data-screen="rpe">
+        <article class="card rpe-card">
+          <div class="cr10-scale" role="radiogroup" aria-label="Borg CR-10 scale">
+            <div class="cr10-header"><span>Rating</span><strong>Description</strong></div>
+            <button class="cr10-row" data-rpe="0" data-display="0"><span>0</span><strong>Nothing at all</strong></button>
+            <button class="cr10-row" data-rpe="0.5" data-display="0.5"><span>0.5</span><strong>Very, very light</strong></button>
+            <button class="cr10-row" data-rpe="1" data-display="1"><span>1</span><strong>Very light</strong></button>
+            <button class="cr10-row" data-rpe="2" data-display="2"><span>2</span><strong>Light</strong></button>
+            <button class="cr10-row" data-rpe="3" data-display="3"><span>3</span><strong>Moderate</strong></button>
+            <button class="cr10-row" data-rpe="4" data-display="4"><span>4</span><strong>Somewhat hard</strong></button>
+            <button class="cr10-row" data-rpe="5" data-display="5"><span>5</span><strong>Hard</strong></button>
+            <button class="cr10-row" data-rpe="6" data-display="6"><span>6</span><strong></strong></button>
+            <button class="cr10-row" data-rpe="7" data-display="7"><span>7</span><strong>Very hard</strong></button>
+            <button class="cr10-row" data-rpe="8" data-display="8"><span>8</span><strong></strong></button>
+            <button class="cr10-row" data-rpe="9" data-display="9"><span>9</span><strong></strong></button>
+            <button class="cr10-row" data-rpe="10" data-display="10"><span>10</span><strong>Very, very hard</strong></button>
+            <button class="cr10-row" data-rpe="11" data-display="*"><span>*</span><strong>Maximal</strong></button>
+          </div>
+        </article>
+        <article class="card action-card">
+          <button class="primary full" id="save-rpe" disabled>Save RPE</button>
+          <p class="saved" id="rpe-saved"></p>
+        </article>
+      </section>
+
+      <section class="screen" data-screen="sleep">
+        <div class="screen-header compact">
+          <p class="eyebrow">Sleep</p>
+          <h1 id="sleep-value">5.0</h1>
+          <p>Previous night</p>
+        </div>
+        <article class="card">
+          <h2>How would you rate the overall quality of your sleep last night?</h2>
+          <p class="helper">0 = terrible sleep, 10 = excellent sleep</p>
+          <input id="sleep-slider" type="range" min="0" max="10" step="0.5" value="5">
+          <div class="scale-row"><span>Worst Possible Sleep</span><span>Best Possible Sleep</span></div>
+          <h2>How approximately how many hours did you sleep last night?</h2>
+          <p class="value-readout"><strong id="sleep-hours-value">8.0</strong> hours</p>
+          <input id="sleep-hours-slider" type="range" min="0" max="16" step="0.5" value="8">
+          <div class="scale-row"><span>0 hours</span><span>16 hours</span></div>
+          <button class="primary full" id="save-sleep">Save Sleep Data</button>
+          <p class="saved" id="sleep-saved"></p>
+        </article>
+      </section>
+
+      <section class="screen" data-screen="log">
+        <div class="screen-header compact">
+          <p class="eyebrow">End-of-Day Log</p>
+          <h1>Daily VAS</h1>
+          <p>Fast recovery and symptom check</p>
+        </div>
+        <article class="card sliders">
+          <div class="vas"><label>Muscle soreness <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>Pain <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>Motivation <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>Hunger <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>Thirst <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>GI distress <strong>50</strong></label><input type="range" value="50"></div>
+          <div class="vas"><label>Social Interaction <strong>50</strong></label><input type="range" min="0" max="100" value="50"><div class="scale-row"><span>None</span><span>Constant</span></div></div>
+        </article>
+        <article class="card">
+          <input type="text" placeholder="Pain location">
+          <textarea placeholder="Symptoms and recovery notes"></textarea>
+          <button class="primary full" id="save-log">Save Daily Log</button>
+          <button class="full" id="open-cmj-from-log">Record CMJ</button>
+          <p class="saved" id="log-saved"></p>
+        </article>
+      </section>
+
+      <section class="screen" data-screen="dashboard">
+        <div class="screen-header compact">
+          <p class="eyebrow">Dashboard</p>
+          <h1>Field Data</h1>
+          <p>Today's RPE ratings</p>
+        </div>
+        <article class="card chart-card">
+          <h2>Today's RPE</h2>
+          <div class="line-chart" aria-label="Today's RPE chart">
+            <span style="--x: 8%; --y: 68%"></span>
+            <span style="--x: 32%; --y: 55%"></span>
+            <span style="--x: 56%; --y: 42%"></span>
+            <span style="--x: 80%; --y: 28%"></span>
+          </div>
+        </article>
+      </section>
+
+      <section class="screen" data-screen="cmj">
+        <div class="screen-header compact">
+          <p class="eyebrow">CMJ</p>
+          <h1>Trial Guide</h1>
+          <p>Record three post-marathon jumps</p>
+        </div>
+        <article class="camera-guide">
+          <div class="body-outline"></div>
+          <span class="pill ready">Ready</span>
+          <p>Rear camera: sagittal view, full body framed, centered, and steady</p>
+        </article>
+        <article class="card">
+          <h2>Countermovement Jumps</h2>
+          <p class="helper">The native app holds the rear flash on for 3 seconds when framing is correct, flashes 3-2-1, then records automatically.</p>
+          <textarea placeholder="Trial notes"></textarea>
+          <button class="primary full" id="record-cmj">Record CMJ Set 1</button>
+          <label class="toggle-row"><input id="cmj-low-light" type="checkbox"> Low Light Mode</label>
+          <label class="toggle-row"><input id="cmj-manual" type="checkbox"> Use Manual Recording</label>
+          <div class="vas duration-control" id="cmj-manual-delay-control" hidden>
+            <label>Recording Delay <strong id="cmj-manual-delay-value">10 sec</strong></label>
+            <input id="cmj-manual-delay" type="range" min="5" max="15" step="1" value="10">
+            <div class="scale-row"><span>5 sec</span><span>15 sec</span></div>
+          </div>
+          <div class="vas duration-control">
+            <label>Recording length <strong id="cmj-duration-value">10 sec</strong></label>
+            <input id="cmj-duration" type="range" min="5" max="30" step="1" value="10">
+            <div class="scale-row"><span>5 sec</span><span>30 sec</span></div>
+          </div>
+          <div class="vas duration-control study-distance">
+            <div class="control-title-row">
+              <label>Camera distance</label>
+              <strong>7.5 ft study standard</strong>
+            </div>
+            <p class="helper">Recording begins only after full-body framing matches the validated study distance and remains stable for 3 seconds.</p>
+          </div>
+          <p class="saved" id="cmj-status"></p>
+        </article>
+      </section>
+
+      <section class="screen" data-screen="sync">
+        <div class="screen-header compact">
+          <p class="eyebrow">Sync</p>
+          <h1>Data Status</h1>
+          <p>Demonstration of the app's offline queue</p>
+        </div>
+        <article class="card status-card">
+          <h2>Status</h2>
+          <div class="meta-row"><span>Mode</span><strong>Interactive demo</strong></div>
+          <div class="meta-row"><span>Connection</span><strong>Disabled</strong></div>
+          <div class="meta-row"><span>Pending items</span><strong id="sync-queue-count">0</strong></div>
+          <div class="meta-row"><span>Last sync</span><strong>Not available</strong></div>
+          <p class="helper">The published demo cannot connect to research storage or transmit data.</p>
+          <div class="button-row sync-actions">
+            <button class="primary" type="button" disabled title="Sync is disabled in the public demo">Sync Now</button>
+            <button type="button" disabled title="Sync is disabled in the public demo">Retry Queue</button>
+          </div>
+        </article>
+        <article class="card queue-card">
+          <div class="row">
+            <div>
+              <h2>Recent Queue</h2>
+              <p class="helper">Demo entries appear here for this visit only.</p>
+            </div>
+            <span class="pill muted" id="queue-pill">Empty</span>
+          </div>
+          <ol class="queue-list" id="queue-list" aria-live="polite">
+            <li class="queue-empty">Complete an RPE, sleep, daily log, or CMJ entry to preview the queue.</li>
+          </ol>
+        </article>
+      </section>
+
+      <nav class="tabs" aria-label="Preview tabs">
+        <button class="active" data-target="today">Today</button>
+        <button data-target="rpe">RPE</button>
+        <button data-target="sleep">Sleep</button>
+        <button data-target="log">Log</button>
+        <button data-target="dashboard">Dashboard</button>
+        <button data-target="cmj">CMJ</button>
+        <button data-target="sync">Sync</button>
+      </nav>
+      <div class="saved-overlay" id="saved-overlay" aria-hidden="true">
+        <div>
+          <span>✓</span>
+          <strong>Saved</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

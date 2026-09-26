@@ -718,6 +718,47 @@ h1,
   background: var(--mist);
 }
 
+.route66-demo {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  background: #f4f6f8;
+}
+
+.route66-demo-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 920px;
+  margin: 0 auto 1.25rem;
+}
+
+.route66-demo-header h3 {
+  margin: 0.2rem 0 0.45rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.55rem;
+  letter-spacing: 0;
+}
+
+.route66-demo-header p:not(.project-label) {
+  margin: 0;
+  color: var(--slate);
+}
+
+.route66-demo-header .text-link {
+  flex: 0 0 auto;
+  padding-bottom: 0.15rem;
+}
+
+.route66-demo-frame {
+  display: block;
+  width: min(100%, 500px);
+  height: 880px;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+}
+
 .image-frame {
   background: linear-gradient(180deg, rgba(136, 28, 28, 0.03), rgba(198, 146, 20, 0.08));
 }
@@ -784,6 +825,22 @@ h1,
 
   .nav-toggle {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 620px) {
+  .route66-demo {
+    padding: 1.2rem 0;
+  }
+
+  .route66-demo-header {
+    display: grid;
+    padding: 0 1.2rem;
+  }
+
+  .route66-demo-frame {
+    width: 100%;
+    height: 760px;
   }
 }
 
